@@ -1,0 +1,184 @@
+:root {
+    --bg-color: #fff;
+    --text-color: #333;
+    --text-hover-color: #666;
+    --border-color: #dddddd;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Calibre', sans-serif;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+*:focus {
+    outline: none;
+}
+body {
+    background-color: var(--bg-color);
+}
+.navbar-brand {
+    font-size: 2.5rem;
+    color: var(--text-color);
+}
+.navbar-brand:hover {
+    color: var(--text-hover-color);
+}
+.nav-link {
+    color: var(--text-color);
+    font-size: x-large;
+    font-weight: 400;
+    text-transform: capitalize;
+    position: relative;
+}
+.nav-link::after {
+    content: "";
+    height: 10px;
+    width: 50%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    border-bottom: 2px solid transparent;
+    transform: scaleX(0) translateX(-50%);
+    transition: all .3s ease-in-out;
+}
+.nav-link:hover::after, .nav-link.router-link-active::after {
+    transform: scaleX(1) translateX(-50%);
+    border-bottom: 2px solid var(--text-hover-color);
+}
+.nav-link:hover, .nav-link:active, .nav-link:focus {
+    color: var(--text-hover-color);
+}
+.hero-text span {
+    font-family: "Calibre",sans-serif;
+    font-size: 1.77778rem;
+    line-height: 3rem;
+}
+
+@media (max-width: 767px) {
+    .hero-text span {
+        font-size: 1.4448rem;
+        line-height: 2.7778rem;
+    }
+}
+
+.footer {
+    border-top: 1px solid var(--border-color);
+}
+.header-text, .footer-text {
+    font-size: 1.77778rem;
+    line-height: 3rem;
+    font-family: "Noe Display",sans-serif;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.thumb {
+    position: relative;
+    overflow: hidden;
+}
+.thumb img {
+    position: relative;
+    transform: scale(1);
+    transition: transform .6s ease-in-out;
+}
+
+.thumb:hover img {
+    transform: scale(1.1);
+}
+.image-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 45px;
+}
+.project-title {
+    font-family: "Noe Display",sans-serif;
+    font-weight: bold;
+    font-size: 2rem;
+}
+.project-description {
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.4;
+}
+.project-link {
+    text-decoration: none;
+}
+.project-link span {
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+.project-link .fa-arrow-right {
+    display: inline-block;
+    margin-left: .5rem;
+    transition: all .3s ease-in-out;
+}
+.site-link {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+.project-link:hover .fa-arrow-right {
+    transform: translateX(.5rem);
+}
+
+@media (max-width: 992px) {
+    .project-title {
+        font-size: 1.5rem;
+    }
+    .project-description {
+        font-size: .998rem;
+    }
+    .project-link span {
+        font-size: 1.1rem;
+    }
+    .image-text {
+        padding: 15px 20px;
+    }
+}
+.project-link .view-all {
+    font-size: 1.4rem;
+}
+
+.sub-text {
+    font-size: 1.2rem;
+    line-height: 2rem;
+    font-weight: normal;
+}
+.icons-tray {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.icons-tray .fa-brands {
+    font-size: 1.4rem;
+    line-height: 3rem;
+    margin-right: 1rem;
+}
+
+@media (min-width: 768px) {
+    .icons-tray .fa-brands {
+        margin: 0 1.2rem;
+    }
+}
+
+/* transitions */
+.page-enter-active,
+.page-leave-active {
+    transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
+}
+
+.page-enter,
+.page-leave-to {
+    opacity: 0;
+    transform: translate3d(0, -25px, 0);
+}
+
+.vh-60 {
+    height: 60vh;
+}
