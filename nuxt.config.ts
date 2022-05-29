@@ -102,6 +102,7 @@ export default defineNuxtConfig({
             ]
         },
     },
+    ssr: true,
     modules: ['bootstrap-vue-3/nuxt'],
     css: [
         'bootstrap/dist/css/bootstrap.css',

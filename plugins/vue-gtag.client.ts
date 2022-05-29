@@ -4,7 +4,7 @@ import VueGtag from 'vue-gtag-next'
 export default defineNuxtPlugin((nuxtApp) => {
     nuxtApp.vueApp.use(VueGtag, {
         property: {
-          id: 'G-6EH7TLE8H6'
+          id: process.env.GOOGLE_ANALYTICS_ID
         }
     })
 });
