@@ -1,4 +1,5 @@
 import { defineNuxtConfig } from 'nuxt'
+import axios from 'axios'
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
@@ -103,7 +104,32 @@ export default defineNuxtConfig({
         },
     },
     ssr: true,
-    modules: ['bootstrap-vue-3/nuxt'],
+    modules: [
+        'bootstrap-vue-3/nuxt',
+        '@nuxtjs/sitemap'
+    ],
+    sitemap: {
+        hostname: 'https://www.rajkshrestha1.com.np',
+        gzip: true,
+        defaults: {
+            changefreq: 'daily',
+            priority: 1,
+            lastmod: new Date()
+        },
+        routes: async () => {
+            const { data } = await axios.get(
+                `https://cdn.contentful.com/spaces/${process.env.CTF_SPACE_ID}/environments/master/entries?access_token=${process.env.CTF_ACCESS_TOKEN}&content_type=projects`
+              )
+            let routes = [
+                '/',
+                '/works'
+            ]
+            data.items.forEach((item) => {
+                item.fields.caseStudy ? routes.push(`/works/${item.fields.slug}`) : null
+            })
+            return routes
+        }
+    },
     css: [
         'bootstrap/dist/css/bootstrap.css',
         '~/assets/css/style.css',
@@ -113,6 +139,9 @@ export default defineNuxtConfig({
         optimizeDeps: {
             exclude: ['class-validator']
         }
+    },
+    publicRuntimeConfig: {
+        GOOGLE_ANALYTICS_ID: process.env.GOOGLE_ANALYTICS_ID,
     },
     buildModules:['@pinia/nuxt']
 })

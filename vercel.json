@@ -1,0 +1,23 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "nuxt.config.ts",
+        "use": "@nuxtjs/vercel-builder",
+        "config": {
+          "serverFiles": ["package.json", ".nuxt/dist/sitemap-routes.json"]
+        }
+      }
+    ],
+    "headers": [
+      {
+        "source": "/_nuxt/(.+)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=31557600"
+          }
+        ]
+      }
+    ]
+  }

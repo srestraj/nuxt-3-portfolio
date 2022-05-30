@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-// import { contentfulClient } from '../plugins/contentful'
+
 import { createClient } from 'contentful'
 
 export const useProjectsStore = defineStore({
