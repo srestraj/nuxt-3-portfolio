@@ -29,7 +29,7 @@ export default defineNuxtConfig({
                 {
                     hid: "og:image",
                     property: "og:image",
-                    content: "/raj-og-img.png"
+                    content: "https://rajkshrestha1.com.np/raj-og-img.png"
     
                 },
                 {
@@ -70,7 +70,7 @@ export default defineNuxtConfig({
                 {
                     hid: "twitter:image",
                     name: "twitter:image",
-                    content: "/raj-og-img.png"
+                    content: "https://rajkshrestha1.com.np/raj-og-img.png"
                 },
                 {
                     hid: "twitter:image:alt",
