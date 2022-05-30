@@ -34,28 +34,22 @@ export default {
   setup() {
     const sliceValue = ref(4)
     const projectStore = useProjectsStore()
-
-    onMounted(() => {
-      projectStore.getProjects()
-    })
+  
+    projectStore.getProjects()
 
     const route = useRoute()
 
-    const updatedSliceValue = computed(() => {
-      if(route.path === '/') {
-        return sliceValue.value
+    const projects = computed(() => {
+      if(route.path == '/') {
+        return projectStore.$state.projectList.slice(0, sliceValue.value)
       } else {
-        sliceValue.value = projectStore.$state.projectList.length
-        return sliceValue.value
+        return projectStore.$state.projectList
       }
     })
 
-    const projects = projectStore.$state.projectList.slice(0, updatedSliceValue.value)
-
     return {
       projects,
-      sliceValue,
-      updatedSliceValue
+      sliceValue
     }
   }
 }
