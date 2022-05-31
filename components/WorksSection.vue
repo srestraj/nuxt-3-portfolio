@@ -28,28 +28,34 @@
 </template>
 
 <script>
-import { useProjectsStore } from '~/store/projects'
-
 export default {
   setup() {
     const sliceValue = ref(4)
-    const projectStore = useProjectsStore()
-  
-    projectStore.getProjects()
+
+    const { data:projectItems } = useAsyncData( 'test', async (nuxtApp) => {
+      const { $contentfulClient } = nuxtApp
+      const entries = await $contentfulClient.getEntries({
+        content_type: 'projects',
+        order: '-sys.createdAt',
+        limit: 100
+      })
+      return entries.items
+    })
 
     const route = useRoute()
 
     const projects = computed(() => {
       if(route.path == '/') {
-        return projectStore.$state.projectList.slice(0, sliceValue.value)
+        return projectItems.value.slice(0, sliceValue.value)
       } else {
-        return projectStore.$state.projectList
+        return projectItems.value
       }
     })
 
     return {
       projects,
-      sliceValue
+      sliceValue,
+      projectItems
     }
   }
 }

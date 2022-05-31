@@ -1,7 +1,6 @@
 import { defineNuxtConfig } from 'nuxt'
 import axios from 'axios'
 
-// https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
     app: {
         head: {
@@ -104,6 +103,7 @@ export default defineNuxtConfig({
         },
     },
     ssr: true,
+    target: 'server',
     modules: [
         'bootstrap-vue-3/nuxt',
         '@nuxtjs/sitemap'
@@ -140,8 +140,14 @@ export default defineNuxtConfig({
             exclude: ['class-validator']
         }
     },
-    publicRuntimeConfig: {
-        GOOGLE_ANALYTICS_ID: process.env.GOOGLE_ANALYTICS_ID,
+    runtimeConfig: {
+        private: {
+            CTF_SPACE_ID: process.env.CTF_SPACE_ID,
+            CTF_ACCESS_TOKEN: process.env.CTF_ACCESS_TOKEN,
+        },
+        public: {
+            GOOGLE_ANALYTICS_ID: process.env.GOOGLE_ANALYTICS_ID,
+        }
     },
     buildModules:['@pinia/nuxt']
 })
