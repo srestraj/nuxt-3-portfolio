@@ -35,7 +35,7 @@ export default defineNuxtConfig({
                 {
                     hid: "og:url",
                     property: "og:url",
-                    content: "https://www.rajkshrestha1.com.np"
+                    content: "https://rajkshrestha1.com.np"
                 },
                 {
                     hid: "og:type",
@@ -91,7 +91,7 @@ export default defineNuxtConfig({
                 },
                 {
                     rel: "canonical",
-                    href: "https://www.rajkshrestha1.com.np"
+                    href: "https://rajkshrestha1.com.np"
                 }
             ],
             script: [
@@ -109,7 +109,7 @@ export default defineNuxtConfig({
         '@nuxtjs/sitemap'
     ],
     sitemap: {
-        hostname: 'https://www.rajkshrestha1.com.np',
+        hostname: 'https://rajkshrestha1.com.np',
         gzip: true,
         defaults: {
             changefreq: 'daily',
