@@ -1,10 +1,7 @@
 import { defineNuxtPlugin } from '#app'
 
-// for dev
-import { createClient } from 'contentful'
-
-// for SSR, SSG
-import contentful from 'contentful'
+import { createClient } from 'contentful' // for dev
+import contentful from 'contentful' // for SSR, SSG
 
 export default defineNuxtPlugin((nuxtApp) => {
   const config = useRuntimeConfig()
