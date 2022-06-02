@@ -182,3 +182,52 @@ body {
 .vh-60 {
     height: 60vh;
 }
+
+/* loading animation */
+
+.card .img {
+  max-width: 100%;
+  min-height: 650px;
+}
+
+@media (max-width: 1024px) {
+    .card .img {
+        min-height: 480px;
+    }
+}
+.card .content {
+  padding: 20px 30px;
+}
+
+.card.is-loading .img,
+.card.is-loading h2,
+.card.is-loading p {
+  background: #eee;
+  background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+  background-size: 200% 100%;
+  -webkit-animation: 1.5s shine linear infinite;
+          animation: 1.5s shine linear infinite;
+}
+.card.is-loading h2 {
+  height: 40px;
+  max-width: 75%;
+  margin-bottom: 1rem;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.card.is-loading p {
+  height: 35px;
+}
+
+@-webkit-keyframes shine {
+  to {
+    background-position-x: -200%;
+  }
+}
+
+@keyframes shine {
+  to {
+    background-position-x: -200%;
+  }
+}

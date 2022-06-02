@@ -11,6 +11,8 @@ export const useProjectsStore = defineStore({
       accToken: process.env.CTF_ACCESS_TOKEN,
       projectList: [],
       selectedProject: "",
+      projectLoading: false,
+      projectsLoading: true,
     };
   },
   actions: {
@@ -30,12 +32,14 @@ export const useProjectsStore = defineStore({
         limit: 100,
       });
       if (response.items.length > 0) {
+        this.projectsLoading = false
         this.projectList = response.items;
       }
     },
 
     // get single project
     async getSingleProject(id) {
+      this.projectLoading = true
       const createClientFunc =
         process.env.NODE_ENV === "development"
           ? createClient
@@ -50,6 +54,7 @@ export const useProjectsStore = defineStore({
         limit: 1,
       });
       if (response.items.length > 0) {
+        this.projectLoading = false
         this.selectedProject = response.items[0];
       }
     },

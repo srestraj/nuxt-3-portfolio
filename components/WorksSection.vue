@@ -1,12 +1,36 @@
 <template>
   <section class="py-lg-5 py-4">
     <div class="container">
-      <div class="row">
+      <div class="row" v-if="loading">
+        <div class="col-md-6 px-lg-4 mb-4">
+          <loading-card>
+            <template #image>
+              <div class="img"></div>
+            </template>
+          </loading-card>
+        </div>
+        <div class="col-md-6 px-lg-4 mb-4">
+          <loading-card>
+            <template #image>
+              <div class="img"></div>
+            </template>
+          </loading-card>
+        </div>
+        <div class="col-md-6 px-lg-4 mb-4">
+          <loading-card>
+            <template #image>
+              <div class="img"></div>
+            </template>
+          </loading-card>
+        </div>
+      </div>
+      <div class="row" v-else>
         <div
           class="col-md-6 px-lg-4 mb-4"
           v-for="project in projects"
           :key="project.fields.slug"
         >
+          
           <div class="thumb">
             <img
               :src="project.fields.image.fields.file.url"
@@ -76,10 +100,15 @@ export default {
       }
     });
 
+    const loading = computed(() => {
+      return store.$state.projectsLoading;
+    });
+
     return {
       projects,
       sliceValue,
       projectItems,
+      loading
     };
   },
 };
