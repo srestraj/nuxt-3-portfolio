@@ -1,23 +1,18 @@
 <template>
   <div>
-    <section class="py-lg-5 py-4" v-if="loading">
-      <div class="container">
-        <div class="row">
-          <loading-card>
-            <template #heading>
-              <h2></h2>
-            </template>
-            <template #paragraph>
-              <p></p>
-            </template>
-          </loading-card>
+    <loading-placeholder :loading="loading"></loading-placeholder>
+    
+    <div v-if="project != '' && !loading">
+      <page-hero
+        :title="project.fields.title"
+        :description="project.fields.description"
+      ></page-hero>
+      <section class="py-lg-5 py-4">
+        <div class="container">
+          <project-description :project="project.fields"></project-description>
         </div>
-      </div>
-    </section>
-    <page-hero v-else-if="project != '' && !loading"
-      :title="project.fields.title"
-      :description="project.fields.description"
-    ></page-hero>
+      </section>
+    </div>
   </div>
 </template>
 <script>
