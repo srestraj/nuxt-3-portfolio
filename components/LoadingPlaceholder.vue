@@ -67,4 +67,9 @@ export default {
     max-width: 30%;
     margin: 0;
 }
+@media (max-width: 600px) {
+    .col-md-4 p {
+        max-width: 50%;
+    }
+}
 </style>
