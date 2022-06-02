@@ -1,15 +1,28 @@
 <template>
   <div class="vh-60">
-      <page-hero :title="$route.params.id.replaceAll('-', ' ') + ' Case Study'" description="Case studies coming soon. Stick around or visit the site to view it LIVE"></page-hero>
+    <!-- {{ project.fields.title }} -->
+    <page-hero
+      v-if="project != ''"
+      :title="project.fields.title"
+      :description="project.fields.description"
+    ></page-hero>
   </div>
 </template>
-
 <script>
+import { useProjectsStore } from "~/store/projects";
 export default {
+  setup() {
+    const store = useProjectsStore();
+    const route = useRoute();
+    store.getSingleProject(route.params.id);
 
-}
+    const project = computed(() => {
+      return store.$state.selectedProject;
+    });
+
+    return {
+      project,
+    };
+  },
+};
 </script>
-
-<style>
-
-</style>

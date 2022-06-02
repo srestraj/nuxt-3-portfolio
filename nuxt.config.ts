@@ -138,11 +138,12 @@ export default defineNuxtConfig({
       exclude: ["class-validator"],
     },
   },
+  env: {
+    CTF_SPACE_ID: process.env.CTF_SPACE_ID,
+    CTF_ACCESS_TOKEN: process.env.CTF_ACCESS_TOKEN,
+  },
   runtimeConfig: {
-    private: {
-      CTF_SPACE_ID: process.env.CTF_SPACE_ID,
-      CTF_ACCESS_TOKEN: process.env.CTF_ACCESS_TOKEN,
-    },
+    private: {},
     public: {
       GOOGLE_ANALYTICS_ID: process.env.GOOGLE_ANALYTICS_ID,
     },
