@@ -7,7 +7,7 @@ Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.
 - [x] Fix Google Analytics
 - [ ] @nuxtjs/sitemap is not working in production. Look for a solution.
 - [x] ~~Add case studies for projects~~ Partial complete.
-
+- [ ] Write proper documentation once complete.
 ## Setup
 
 Make sure to install the dependencies:
