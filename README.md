@@ -1,8 +1,6 @@
-# Nuxt 3 Minimal Starter
+# Nuxt 3 Minimal Portfolio using Pinia & Contentful
 
-Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.
-
-#### Note to self
+#### TODOs.
 
 - [x] Fix Google Analytics
 - [x] ~~@nuxtjs/sitemap is not working in production. Look for a solution.~~ Thanks to [@enterspeedhq](https://github.com/enterspeedhq)
