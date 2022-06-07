@@ -1,7 +1,7 @@
 <template>
   <section class="py-lg-5 py-4 footer">
       <div class="container">
-        <div class="row">
+        <div class="row mb-3">
           <div class="col-12 my-auto">
             <p class="text-center footer-text">get in touch</p>
             <div class="icons-tray">
@@ -9,6 +9,12 @@
                 <i :class="'fa-brands fa-' + brand.icon"></i>
               </a>
             </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 text-center project-info py-5">
+            <a href="https://github.com/srestraj/nuxt-3-portfolio" target="_blank" rel="noreferrer noopener"><span style="text-transform: none;">Open-sourced on GitHub</span></a>
           </div>
         </div>
       </div>

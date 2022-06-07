@@ -106,7 +106,7 @@ export default defineNuxtConfig({
   },
   ssr: true,
   target: "server",
-  modules: ["bootstrap-vue-3/nuxt", "@nuxtjs/sitemap"],
+  modules: ["bootstrap-vue-3/nuxt", "@nuxtjs/sitemap", '@nuxtjs/color-mode'],
   css: [
     "bootstrap/dist/css/bootstrap.css",
     "~/assets/css/style.css",

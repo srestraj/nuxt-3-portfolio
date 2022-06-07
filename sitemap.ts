@@ -37,7 +37,7 @@ export const generateSitemap = async () => {
     x.fields.caseStudy
       ? sitemap.write({
           url: `/works/${x.fields.slug}`,
-          lastmod: new Date(),
+          lastmod: x.sys.updatedAt,
         })
       : null;
   });

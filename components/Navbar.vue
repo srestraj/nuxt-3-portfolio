@@ -5,7 +5,7 @@
       <div class="col-md-auto ml-auto">
         <ul id="right-nav" class="navbar-nav right-nav">
           <li
-            class="nav-item"
+            class="nav-item d-none d-md-block"
             v-for="(item, index) in nav"
             :key="index"
           >
@@ -13,6 +13,7 @@
               {{ item.text }}
             </nuxt-link>
           </li>
+          <theme-toggler></theme-toggler>
         </ul>
       </div>
     </div>
@@ -27,7 +28,7 @@ export default {
       {
         text: "works",
         link: "/works",
-      }
+      },
     ])
 
     return {
