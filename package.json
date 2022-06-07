@@ -19,6 +19,7 @@
     "bootstrap-vue-3": "^0.1.13",
     "contentful": "^9.1.29",
     "pinia": "^2.0.14",
+    "sitemap": "^7.1.1",
     "typescript": "^4.7.2"
   }
 }

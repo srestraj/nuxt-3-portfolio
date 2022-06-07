@@ -1,5 +1,5 @@
 import { defineNuxtConfig } from "nuxt";
-import axios from "axios";
+import { generateSitemap } from "./sitemap";
 
 export default defineNuxtConfig({
   app: {
@@ -107,32 +107,16 @@ export default defineNuxtConfig({
   ssr: true,
   target: "server",
   modules: ["bootstrap-vue-3/nuxt", "@nuxtjs/sitemap"],
-  sitemap: {
-    hostname: "https://rajkshrestha1.com.np",
-    gzip: true,
-    defaults: {
-      changefreq: "daily",
-      priority: 1,
-      lastmod: new Date(),
-    },
-    routes: async () => {
-      const { data } = await axios.get(
-        `https://cdn.contentful.com/spaces/${process.env.CTF_SPACE_ID}/environments/master/entries?access_token=${process.env.CTF_ACCESS_TOKEN}&content_type=projects`
-      );
-      let routes = ["/", "/works"];
-      data.items.forEach((item) => {
-        item.fields.caseStudy
-          ? routes.push(`/works/${item.fields.slug}`)
-          : null;
-      });
-      return routes;
-    },
-  },
   css: [
     "bootstrap/dist/css/bootstrap.css",
     "~/assets/css/style.css",
     "~/assets/css/fonts.css",
   ],
+  hooks: {
+    "build:before": () => {
+      generateSitemap();
+    },
+  },
   vite: {
     optimizeDeps: {
       exclude: ["class-validator"],
