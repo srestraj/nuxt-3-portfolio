@@ -78,38 +78,26 @@
   </section>
 </template>
 
-<script>
+<script setup lang="ts">
 import { useProjectsStore } from "~/store/projects";
+const sliceValue = ref(4);
+const store = useProjectsStore();
+store.getProjects();
 
-export default {
-  setup() {
-    const sliceValue = ref(4);
-    const store = useProjectsStore();
-    store.getProjects();
+const projectItems = computed(() => {
+  return store.$state.projectList;
+});
+const route = useRoute();
 
-    const projectItems = computed(() => {
-      return store.$state.projectList;
-    });
-    const route = useRoute();
+const projects = computed(() => {
+  if (route.path == "/") {
+    return projectItems.value.slice(0, sliceValue.value);
+  } else {
+    return projectItems.value;
+  }
+});
 
-    const projects = computed(() => {
-      if (route.path == "/") {
-        return projectItems.value.slice(0, sliceValue.value);
-      } else {
-        return projectItems.value;
-      }
-    });
-
-    const loading = computed(() => {
-      return store.$state.projectsLoading;
-    });
-
-    return {
-      projects,
-      sliceValue,
-      projectItems,
-      loading
-    };
-  },
-};
+const loading = computed(() => {
+  return store.$state.projectsLoading;
+})
 </script>

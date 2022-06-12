@@ -56,10 +56,12 @@
 	</section>
 </template>
 
-<script>
-export default {
-    props: ['loading']
-}
+<script lang="ts" setup>
+	interface Props {
+		loading: Boolean
+	}
+	
+	defineProps<Props>()
 </script>
 
 <style scoped>

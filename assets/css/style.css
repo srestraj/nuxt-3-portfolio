@@ -104,7 +104,17 @@ body {
   font-weight: bold;
   text-transform: capitalize;
 }
-
+.fixed-footer {
+  position: fixed;
+  bottom: 0;
+  background: var(--bg-color);
+  width: 100%;
+  padding: 1rem 0;
+}
+.open-source {
+  justify-content: flex-start;
+  align-content: center;
+}
 .thumb {
   position: relative;
   overflow: hidden;

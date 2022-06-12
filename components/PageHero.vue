@@ -11,9 +11,11 @@
   </section>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
+  interface Props {
+    title: string
+    description: string
+  }
 
-export default {
-    props: ['title', 'description'],
-}
+  defineProps<Props>()
 </script>

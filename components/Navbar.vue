@@ -20,20 +20,11 @@
   </nav>
 </template>
 
-<script lang="ts">
-
-export default {
-  setup() {
-    const nav = ref([
-      {
-        text: "works",
-        link: "/works",
-      },
-    ])
-
-    return {
-      nav
+<script lang="ts" setup>
+  const nav = ref([
+    {
+      text: 'works',
+      link: '/works'
     }
-  }
-};
+  ])
 </script>
