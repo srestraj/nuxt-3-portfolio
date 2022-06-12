@@ -2,7 +2,7 @@
 
 An open-source portfolio template built using [Nuxt 3](https://v3.nuxtjs.org/), [Pinia](https://pinia.vuejs.org/) and [Contentful](https://www.contentful.com/).
 
-One-click deploy: [![Deploy with Vercel](https://vercel.com/new/clone?repository-url=https://github.com/srestraj/nuxt-3-portfolio&repository-name=my-awesome-portfolio&env=BASE_URL,CTF_SPACE_ID,DOMAIN,CTF_ACCESS_TOKEN,GOOGLE_ANALYTICS_ID)
+One-click deploy: [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/srestraj/nuxt-3-portfolio&repository-name=my-awesome-portfolio&env=BASE_URL,CTF_SPACE_ID,DOMAIN,CTF_ACCESS_TOKEN,GOOGLE_ANALYTICS_ID)
 
 Demo: https://rajkshrestha1.com.np
 
@@ -31,7 +31,7 @@ Demo: https://rajkshrestha1.com.np
 ![Tokens](https://github.com/srestraj/nuxt-3-portfolio/blob/main/public/tokens.png?raw=true)
 7. Get your Google Analytics ID (optional)
 8. Now, you can click the deploy button to deploy the site to Vercel.
-[![Deploy with Vercel](https://vercel.com/new/clone?repository-url=https://github.com/srestraj/nuxt-3-portfolio&repository-name=my-awesome-portfolio&env=BASE_URL,CTF_SPACE_ID,DOMAIN,CTF_ACCESS_TOKEN,GOOGLE_ANALYTICS_ID)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/srestraj/nuxt-3-portfolio&repository-name=my-awesome-portfolio&env=BASE_URL,CTF_SPACE_ID,DOMAIN,CTF_ACCESS_TOKEN,GOOGLE_ANALYTICS_ID)
 9. If you want to manually deploy the site to Vercel, just make sure to include your environmental variables and modify the build and development commands as follows.
 ![Build Settings](https://github.com/srestraj/nuxt-3-portfolio/blob/main/public/build_settings.png?raw=true)
 
