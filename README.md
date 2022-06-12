@@ -37,7 +37,7 @@ Demo: https://rajkshrestha1.com.np
 ![Tokens](https://github.com/srestraj/nuxt-3-portfolio/blob/main/public/tokens.png?raw=true)
 
 7. Get your Google Analytics ID (optional)
-8. Now, you can click the deploy button to deploy the site to Vercel.
+8. Now, you can click the deploy button to deploy the site to Vercel. Since Nuxt 3 has updated the deployment process, you'll need to set the build & development commands as follows. (see #9).
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/srestraj/nuxt-3-portfolio&repository-name=my-awesome-portfolio&env=BASE_URL,CTF_SPACE_ID,DOMAIN,CTF_ACCESS_TOKEN,GOOGLE_ANALYTICS_ID)
 
