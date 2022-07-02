@@ -34,6 +34,7 @@ export const generateSitemap = async () => {
   sitemap.write({ url: "/works", lastmod: new Date() });
 
   routes.forEach((x) => {
+    // exclude routes with no case study
     x.fields.caseStudy
       ? sitemap.write({
           url: `/works/${x.fields.slug}`,

@@ -60,7 +60,7 @@
             </div>
           </div>
         </div>
-        <div class="row py-5">
+        <div class="row py-5 mx-auto">
           <div class="col-12 text-center">
             <nuxt-link
               :to="{ name: 'works' }"
