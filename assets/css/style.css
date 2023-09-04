@@ -86,10 +86,41 @@ body {
   line-height: 3rem;
 }
 
+.rounded-md {
+  border-radius: 1.25rem;
+}
+
+.hero-img {
+  height: 450px;
+  object-fit: cover;
+}
+
+.img-container::before {
+  content: "";
+  width: 90%;
+  height: 100%;
+  background: #333;
+  border-radius: 1rem;
+  display: block;
+  position: absolute;
+  top: -15px;
+  left: -8px;
+}
+
+@media (max-width: 992px) {
+  .hero-img {
+    height: 100%;
+  }
+}
+
 @media (max-width: 767px) {
   .hero-text span {
     font-size: 1.4448rem;
     line-height: 2.7778rem;
+  }
+  .img-container::before {
+    top: -10px;
+    left: 3px;
   }
 }
 
